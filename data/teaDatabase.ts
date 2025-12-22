@@ -1,10 +1,12 @@
 
 import { TeaDetailData } from '../types';
 
-// Helper to generate local image path
-// 修复说明：在 React/Vite 环境中，public 文件夹的内容会被直接服务在根路径下。
-// 例如：public/song-pin.webp 在浏览器中应通过 /song-pin-1.webp 访问。
-const getTeaImage = (id: string) => `tea-image/${id}.webp`;
+// teaDatabase.ts
+
+const getTeaImage = (id: string) => {
+  // 强制手动加入仓库名，这是最稳妥的办法
+  return `/puer/tea-image/${id}.webp`;
+};
 
 export const TEA_DATABASE: Record<string, TeaDetailData> = {
   // --- 号级茶 (Antique) ---
