@@ -13,7 +13,7 @@ export const TEA_DATABASE: Record<string, TeaDetailData> = {
   'song-pin': {
     name: '宋聘号·红标',
     subTitle: '茶中之皇 乾利贞宋聘',
-    image: getTeaImage('song-pin-1'),
+    image: getTeaImage('song-pin'),
     year: '1920年代',
     factory: '乾利贞宋聘号',
     spec: '约330克/饼 (古董茶)',
