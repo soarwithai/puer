@@ -3,7 +3,7 @@ import { TeaDetailData } from '../types';
 
 // Helper to generate local image path
 // 修复说明：在 React/Vite 环境中，public 文件夹的内容会被直接服务在根路径下。
-// 例如：public/song-pin.webp 在浏览器中应通过 /song-pin.webp 访问。
+// 例如：public/song-pin.webp 在浏览器中应通过 /song-pin-1.webp 访问。
 const getTeaImage = (id: string) => `${id}.webp`;
 
 export const TEA_DATABASE: Record<string, TeaDetailData> = {
@@ -11,7 +11,7 @@ export const TEA_DATABASE: Record<string, TeaDetailData> = {
   'song-pin': {
     name: '宋聘号·红标',
     subTitle: '茶中之皇 乾利贞宋聘',
-    image: getTeaImage('song-pin'),
+    image: getTeaImage('song-pin-1'),
     year: '1920年代',
     factory: '乾利贞宋聘号',
     spec: '约330克/饼 (古董茶)',
