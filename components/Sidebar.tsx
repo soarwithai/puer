@@ -17,13 +17,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ onSelect, selectedId, isOpen, 
   const groupedTeas = useMemo(() => {
     const groups: Partial<Record<TeaCategory, TeaListItem[]>> = {};
     
-    // First filter the full catalog
     const filteredCatalog = TEA_CATALOG.filter(tea => 
       tea.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
       tea.id.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Then group filtered results
     Object.values(TeaCategory).forEach(cat => {
       const items = filteredCatalog.filter(t => t.category === cat);
       if (items.length > 0) {
@@ -104,9 +102,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onSelect, selectedId, isOpen, 
                           `}
                         >
                           <span className="font-medium truncate">{tea.name}</span>
-                          <span className={`text-xs ${selectedId === tea.id ? 'text-tea-300' : 'text-tea-600 group-hover:text-tea-500'}`}>
-                              P.{tea.page}
-                          </span>
+                          {/* 页码已去掉 */}
                         </button>
                       </li>
                     ))}
